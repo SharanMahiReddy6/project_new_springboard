@@ -16,7 +16,9 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-API_URL = "http://localhost:8000"
+import os
+API_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
+
 
 # Set up session state to store results between page refreshes
 if 'analysis_history' not in st.session_state:
